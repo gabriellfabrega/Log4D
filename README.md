@@ -31,7 +31,7 @@ uses
   Log4D;
 ```
 
-### 2️⃣ Configure os Providers (opcional)
+### 2️⃣ Configure os Providers
 
 Caso deseje criar uma *Factory* para os providers:
 
