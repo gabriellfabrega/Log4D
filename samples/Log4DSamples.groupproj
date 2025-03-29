@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{988885BD-1D98-4EE7-A93E-DCDA40B4A459}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Log4D\Log4DSample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Log4DApi\Log4DApi.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Log4DSample">
+        <MSBuild Projects="Log4D\Log4DSample.dproj"/>
+    </Target>
+    <Target Name="Log4DSample:Clean">
+        <MSBuild Projects="Log4D\Log4DSample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Log4DSample:Make">
+        <MSBuild Projects="Log4D\Log4DSample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Log4DApi">
+        <MSBuild Projects="Log4DApi\Log4DApi.dproj"/>
+    </Target>
+    <Target Name="Log4DApi:Clean">
+        <MSBuild Projects="Log4DApi\Log4DApi.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Log4DApi:Make">
+        <MSBuild Projects="Log4DApi\Log4DApi.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Log4DSample;Log4DApi"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Log4DSample:Clean;Log4DApi:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Log4DSample:Make;Log4DApi:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
