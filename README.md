@@ -50,12 +50,13 @@ end;
 ### 3️⃣ Inicialização com os Providers Desejados
 
 ```delphi
-TLog4D
-  .Output(Memo1)
-  .UseProvider(TLog4DSampleFactoryProviders.CreateTextFileProvider)
-  .UseProvider(TLog4DSampleFactoryProviders.CreateHttpProvider)
-  .UseProvider(TLog4DSampleFactoryProviders.CreateMqttProvider)
-  .UseProvider(TLog4DSampleFactoryProviders.CreateSqliteProvider);
+begin
+  TLog4D
+    .Output(Memo1)
+    .UseProvider(TLog4DSampleFactoryProviders.CreateTextFileProvider)
+    .UseProvider(TLog4DSampleFactoryProviders.CreateHttpProvider)
+    .UseProvider(TLog4DSampleFactoryProviders.CreateMqttProvider)
+    .UseProvider(TLog4DSampleFactoryProviders.CreateSqliteProvider);
 ```
 
 ### 4️⃣ Registro de Logs
