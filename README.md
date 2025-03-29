@@ -57,6 +57,7 @@ begin
     .UseProvider(TLog4DSampleFactoryProviders.CreateHttpProvider)
     .UseProvider(TLog4DSampleFactoryProviders.CreateMqttProvider)
     .UseProvider(TLog4DSampleFactoryProviders.CreateSqliteProvider);
+end;
 ```
 
 ### 4️⃣ Registro de Logs
