@@ -46,9 +46,9 @@ procedure TViewPrincipal.FormCreate(Sender: TObject);
 begin
   TLog4D
     .Output(Memo1)
-//    .UseProvider(TLog4DSampleFactoryProviders.CreateTextFileProvider)
-//    .UseProvider(TLog4DSampleFactoryProviders.CreateHttpProvider)
-//    .UseProvider(TLog4DSampleFactoryProviders.CreateMqttProvider)
+    .UseProvider(TLog4DSampleFactoryProviders.CreateTextFileProvider)
+    .UseProvider(TLog4DSampleFactoryProviders.CreateHttpProvider)
+    .UseProvider(TLog4DSampleFactoryProviders.CreateMqttProvider)
     .UseProvider(TLog4DSampleFactoryProviders.CreateSqliteProvider)
 end;
 
