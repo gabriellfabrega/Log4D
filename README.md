@@ -6,7 +6,7 @@
 ✅ **APIs**  
 ✅ **Filas MQTT**  
 ✅ **Arquivos de Texto**  
-✅ **Banco de Dados SQLite**  
+✅ **Banco de Dados SQLite (Seattle e posteriores)**  
 
 ---
 
@@ -91,13 +91,3 @@ implementation
 
 end.
 ```
-
----
-
-## 🎯 Contribuição
-Fique à vontade para enviar *Pull Requests* e sugerir melhorias! 🚀
-
----
-
-### 📜 Licença
-Este projeto está licenciado sob a **MIT License**.
