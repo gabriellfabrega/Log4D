@@ -3,7 +3,8 @@ unit Log4D.Provider.Sqlite;
 interface
 
 uses
-  Log4D.Provider.Param.Files
+  Log4D
+  ,Log4D.Provider.Param.Files
   ,Log4D.Provider
   ,System.IOUtils
   ,System.SysUtils
