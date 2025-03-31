@@ -1,7 +1,5 @@
 # Log4D - Sistema de Logs Distribuído para Delphi
 
-![Delphi](https://img.shields.io/badge/Delphi-7%20to%2012.3-blue)
-
 > **Log4D** surgiu da necessidade de gerenciar logs de aplicações distribuídas. Com ele, é possível visualizar os logs em tela, armazená-los e trafegá-los por diversos meios.
 
 ## Recursos
