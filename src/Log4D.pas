@@ -3,19 +3,16 @@ unit Log4D;
 interface
 
 uses
-  {$IFNDEF CONSOLE}
-    Vcl.StdCtrls,
-  {$ENDIF}
-
   System.SysUtils,
   System.Generics.Collections,
+  System.Classes,
   Log4D.Provider;
 
 type
   TLog4D = class
   private
     class var FInstance: TLog4D;
-    class var FMemo: TMemo;
+    class var FMemo: TStrings;
     class var FProviders: TList<ILog4DProvider>;
     class procedure Log(AMessage: string; AUseProviders: Boolean);
     constructor Create;
@@ -23,7 +20,7 @@ type
   public
 
     {$IFNDEF CONSOLE}
-      class function Output(AMemo: TMemo): TLog4D;
+      class function Output(AMemo: TStrings): TLog4D;
     {$ENDIF}
 
     class function UseProvider(AProvider: ILog4DProvider): TLog4D;
@@ -82,7 +79,7 @@ begin
     Writeln(AMessage);
   {$ELSE}
     if Assigned(FMemo) then
-      FMemo.Lines.Add(AMessage);
+      FMemo.Add(AMessage);
   {$ENDIF}
 
   if AUseProviders then
@@ -90,7 +87,7 @@ begin
       LProvider.Send(AMessage);
 end;
 
-class function TLog4D.Output(AMemo: TMemo): TLog4D;
+class function TLog4D.Output(AMemo: TStrings): TLog4D;
 begin
   Result := FInstance;
   FMemo := AMemo;
