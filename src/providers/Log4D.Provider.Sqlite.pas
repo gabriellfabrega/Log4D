@@ -9,7 +9,7 @@ uses
   ,System.IOUtils
   ,System.SysUtils
 
-  {$IF RTLVersion >= 30.0, System.SysUtils}
+  {$IF RTLVersion >= 30.0}
     ,FireDAC.Comp.Client
     ,FireDAC.Phys.SQLite
     ,FireDAC.Stan.Async
