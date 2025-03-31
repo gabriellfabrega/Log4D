@@ -87,11 +87,13 @@ begin
       LProvider.Send(AMessage);
 end;
 
+{$IFNDEF CONSOLE}
 class function TLog4D.Output(AMemo: TStrings): TLog4D;
 begin
   Result := FInstance;
   FMemo := AMemo;
 end;
+{$ENDIF}
 
 class function TLog4D.UseProvider(AProvider: ILog4DProvider): TLog4D;
 begin
